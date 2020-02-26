@@ -1,0 +1,228 @@
+techexe@techexe-ubuntu-desktop02:/var/www/html/newProject$ git config --global user.name = "Pravin Kumar"
+techexe@techexe-ubuntu-desktop02:/var/www/html/newProject$ git config --global user.email = "pravinkumardubey1008@gmail.com"
+techexe@techexe-ubuntu-desktop02:/var/www/html/newProject$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.editorconfig
+	.env.example
+	.gitattributes
+	.gitignore
+	.styleci.yml
+	app/
+	artisan
+	bootstrap/
+	composer.json
+	composer.lock
+	config/
+	database/
+	package.json
+	phpunit.xml
+	public/
+	resources/
+	routes/
+	server.php
+	storage/
+	tests/
+	webpack.mix.js
+
+nothing added to commit but untracked files present (use "git add" to track)
+techexe@techexe-ubuntu-desktop02:/var/www/html/newProject$ git add .
+techexe@techexe-ubuntu-desktop02:/var/www/html/newProject$ git commit -m "first push"
+[master 5bada2f] first push
+ 146 files changed, 10745 insertions(+)
+ create mode 100644 .editorconfig
+ create mode 100644 .env.example
+ create mode 100644 .gitattributes
+ create mode 100644 .gitignore
+ create mode 100644 .styleci.yml
+ create mode 100644 app/Category.php
+ create mode 100644 app/Comment.php
+ create mode 100644 app/Console/Kernel.php
+ create mode 100644 app/Exceptions/Handler.php
+ create mode 100644 app/Http/Controllers/Abc/UserController.php
+ create mode 100644 app/Http/Controllers/Auth/ConfirmPasswordController.php
+ create mode 100644 app/Http/Controllers/Auth/ForgotPasswordController.php
+ create mode 100644 app/Http/Controllers/Auth/LoginController.php
+ create mode 100644 app/Http/Controllers/Auth/RegisterController.php
+ create mode 100644 app/Http/Controllers/Auth/ResetPasswordController.php
+ create mode 100644 app/Http/Controllers/Auth/VerificationController.php
+ create mode 100644 app/Http/Controllers/CategoryController.php
+ create mode 100644 app/Http/Controllers/CommentController.php
+ create mode 100644 app/Http/Controllers/Controller.php
+ create mode 100644 app/Http/Controllers/LikeController.php
+ create mode 100644 app/Http/Controllers/LocalizationController.php
+ create mode 100644 app/Http/Controllers/NewRegController.php
+ create mode 100644 app/Http/Controllers/PostController.php
+ create mode 100644 app/Http/Controllers/UserController.php
+ create mode 100644 app/Http/Kernel.php
+ create mode 100644 app/Http/Middleware/Authenticate.php
+ create mode 100644 app/Http/Middleware/CheckForMaintenanceMode.php
+ create mode 100644 app/Http/Middleware/EncryptCookies.php
+ create mode 100644 app/Http/Middleware/Localization.php
+ create mode 100644 app/Http/Middleware/RedirectIfAuthenticated.php
+ create mode 100644 app/Http/Middleware/TrimStrings.php
+ create mode 100644 app/Http/Middleware/TrustProxies.php
+ create mode 100644 app/Http/Middleware/VerifyCsrfToken.php
+ create mode 100644 app/Http/Requests/NewRegRequest.php
+ create mode 100644 app/Http/Requests/RegistrationRequest.php
+ create mode 100644 app/Like.php
+ create mode 100644 app/NewReg.php
+ create mode 100644 app/Post.php
+ create mode 100644 app/Providers/AppServiceProvider.php
+ create mode 100644 app/Providers/AuthServiceProvider.php
+ create mode 100644 app/Providers/BroadcastServiceProvider.php
+ create mode 100644 app/Providers/EventServiceProvider.php
+ create mode 100644 app/Providers/RouteServiceProvider.php
+ create mode 100644 app/Register.php
+ create mode 100644 app/User.php
+ create mode 100755 artisan
+ create mode 100644 bootstrap/app.php
+ create mode 100644 bootstrap/cache/.gitignore
+ create mode 100644 composer.json
+ create mode 100644 composer.lock
+ create mode 100644 config/app.php
+ create mode 100644 config/auth.php
+ create mode 100644 config/broadcasting.php
+ create mode 100644 config/cache.php
+ create mode 100644 config/database.php
+ create mode 100644 config/filesystems.php
+ create mode 100644 config/hashing.php
+ create mode 100644 config/logging.php
+ create mode 100644 config/mail.php
+ create mode 100644 config/queue.php
+ create mode 100644 config/services.php
+ create mode 100644 config/session.php
+ create mode 100644 config/view.php
+ create mode 100644 database/.gitignore
+ create mode 100644 database/factories/UserFactory.php
+ create mode 100644 database/migrations/2014_10_12_100000_create_password_resets_table.php
+ create mode 100644 database/migrations/2019_08_19_000000_create_failed_jobs_table.php
+ create mode 100644 database/migrations/2020_02_14_083957_registrations.php
+ create mode 100644 database/migrations/2020_02_14_084831_create_mytable.php
+ create mode 100644 database/migrations/2020_02_20_054602_create_users_table.php
+ create mode 100644 database/migrations/2020_02_20_062147_create_categories_table.php
+ create mode 100644 database/migrations/2020_02_20_063347_create_posts_table.php
+ create mode 100644 database/migrations/2020_02_20_064547_create_likes_table.php
+ create mode 100644 database/migrations/2020_02_20_065058_create_comments_table.php
+ create mode 100644 database/migrations/2020_02_25_095100_create_new_regs_table.php
+ create mode 100644 database/seeds/DatabaseSeeder.php
+ create mode 100644 database/seeds/RegisterTableSeeder.php
+ create mode 100644 database/seeds/UsersTableSeeder.php
+ create mode 100644 package.json
+ create mode 100644 phpunit.xml
+ create mode 100644 public/.htaccess
+ create mode 100644 public/css/welcome.css
+ create mode 100644 public/favicon.ico
+ create mode 100644 public/index.php
+ create mode 100644 public/js/blob.js
+ create mode 100644 public/js/comment.js
+ create mode 100644 public/js/language.js
+ create mode 100644 public/js/login.js
+ create mode 100644 public/js/new.js
+ create mode 100644 public/robots.txt
+ create mode 100644 public/uploads/A26iuXOYGzzimblRLisaLJ0TqtfaoLNjL0wqSaEE.jpeg
+ create mode 100644 public/uploads/MD9ReGz1gzihTqmUObqRtjSUxwXb0RyWKde0BtvF.jpeg
+ create mode 100644 public/uploads/abc.jpeg
+ create mode 100644 public/uploads/as.jpeg
+ create mode 100644 public/uploads/delhi_police_1582714507_618x347.jpeg
+ create mode 100644 public/uploads/df.jpeg
+ create mode 100644 public/uploads/doval_delhi_750_1582718554_618x347.jpeg
+ create mode 100644 public/uploads/dw2OEMAm5Q2m34AK3W7WaTUqJam6U0xqyddnf5iG.jpeg
+ create mode 100644 public/uploads/fSeERSofIhwvdfDJvmxt2syREy9ePbAdnZavrUed.jpeg
+ create mode 100644 public/uploads/gCN0njmpCshV7WuYcZacELbvpkRwWLZrJ8GDBkzh.jpeg
+ create mode 100644 public/uploads/home_minister_amit_shah_pti_1582715982_618x347.jpeg
+ create mode 100644 public/uploads/pic_bulboff.gif
+ create mode 100644 public/uploads/pic_bulbon.gif
+ create mode 100644 public/web.config
+ create mode 100644 resources/js/app.js
+ create mode 100644 resources/js/bootstrap.js
+ create mode 100644 resources/lang/en/auth.php
+ create mode 100644 resources/lang/en/home.php
+ create mode 100644 resources/lang/en/pagination.php
+ create mode 100644 resources/lang/en/passwords.php
+ create mode 100644 resources/lang/en/validation.php
+ create mode 100644 resources/lang/franch/home.php
+ create mode 100644 resources/lang/hindi/home.php
+ create mode 100644 resources/sass/app.scss
+ create mode 100644 resources/views/add.blade.php
+ create mode 100644 resources/views/blob-list.blade.php
+ create mode 100644 resources/views/category.blade.php
+ create mode 100644 resources/views/dashboard.blade.php
+ create mode 100644 resources/views/description.blade.php
+ create mode 100644 resources/views/edit_blob.blade.php
+ create mode 100644 resources/views/formhandling.blade.php
+ create mode 100644 resources/views/header.blade.php
+ create mode 100644 resources/views/login.blade.php
+ create mode 100644 resources/views/new/welcome.blade.php
+ create mode 100644 resources/views/show.blade.php
+ create mode 100644 resources/views/user.blade.php
+ create mode 100644 resources/views/welcome.blade.php
+ create mode 100644 routes/api.php
+ create mode 100644 routes/channels.php
+ create mode 100644 routes/console.php
+ create mode 100644 routes/web.php
+ create mode 100644 server.php
+ create mode 100755 storage/app/.gitignore
+ create mode 100755 storage/app/public/.gitignore
+ create mode 100755 storage/framework/.gitignore
+ create mode 100755 storage/framework/cache/.gitignore
+ create mode 100755 storage/framework/cache/data/.gitignore
+ create mode 100755 storage/framework/sessions/.gitignore
+ create mode 100755 storage/framework/testing/.gitignore
+ create mode 100755 storage/framework/views/.gitignore
+ create mode 100755 storage/logs/.gitignore
+ create mode 100644 tests/CreatesApplication.php
+ create mode 100644 tests/Feature/ExampleTest.php
+ create mode 100644 tests/TestCase.php
+ create mode 100644 tests/Unit/ExampleTest.php
+ create mode 100644 webpack.mix.js
+techexe@techexe-ubuntu-desktop02:/var/www/html/newProject$ git branch
+* master
+techexe@techexe-ubuntu-desktop02:/var/www/html/newProject$ git push origin master
+Username for 'https://github.com': pravinkumardubey
+Password for 'https://pravinkumardubey@github.com': 
+remote: Invalid username or password.
+fatal: Authentication failed for 'https://github.com/pravinkumardubey/myfacebook.git/'
+techexe@techexe-ubuntu-desktop02:/var/www/html/newProject$ git push origin master
+Username for 'https://github.com': pravinkumardubey
+Password for 'https://pravinkumardubey@github.com': 
+Counting objects: 180, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (158/158), done.
+Writing objects: 100% (180/180), 214.72 KiB | 0 bytes/s, done.
+Total 180 (delta 26), reused 0 (delta 0)
+remote: Resolving deltas: 100% (26/26), done.
+To https://github.com/pravinkumardubey/myfacebook.git
+ * [new branch]      master -> master
+techexe@techexe-ubuntu-desktop02:/var/www/html/newProject$ git status
+On branch master
+nothing to commit, working directory clean
+techexe@techexe-ubuntu-desktop02:/var/www/html/newProject$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   resources/views/new/welcome.blade.php
+
+no changes added to commit (use "git add" and/or "git commit -a")
+techexe@techexe-ubuntu-desktop02:/var/www/html/newProject$ git remote add origin https://github.com/pravinkumardubey/new-project.git
+fatal: remote origin already exists.
+techexe@techexe-ubuntu-desktop02:/var/www/html/newProject$ git add .
+techexe@techexe-ubuntu-desktop02:/var/www/html/newProject$ git commit -m "again push"
+[master b7b12b6] again push
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+techexe@techexe-ubuntu-desktop02:/var/www/html/newProject$ git push origin master
+Username for 'https://github.com': pravinkumardubey
+Password for 'https://pravinkumardubey@github.com': 
+Counting objects: 6, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (6/6), 443 bytes | 0 bytes/s, done.
+Total 6 (delta 4), reused 0 (delta 0)
+remote: Resolving deltas: 100% (4/4), completed with 4 local objects.
+To https://github.com/pravinkumardubey/myfacebook.git
+   5bada2f..b7b12b6  master -> master
+techexe@techexe-ubuntu-desktop02:/var/www/html/newProject$ ^C
