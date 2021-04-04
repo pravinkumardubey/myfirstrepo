@@ -72,7 +72,9 @@ Cache::get('spatie.permission.cache');
 ================================
 php dogblocker for php comments
 php companion for php self import
-
+[
+	{"keys":["ctrl+u"],"command":"find_use"}
+]
 =============================================================
 Advance php connection code
 
