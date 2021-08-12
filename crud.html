@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		.main{
+			height: 240px;width: 220px;background: orange;margin: 0px auto;border-radius: 10px;
+			border: 5px solid #a1a1a1;
+		}
+		input{
+			height: 25px;width: 190px;border-radius: 5px;
+			margin: 2px 10px;
+		}
+		button{
+			height: 30px;width: 70px;background: green;color: #fff;margin-left: 70px;cursor: pointer;
+		}
+		table tbody tr th:nth-child(7),table tbody tr th:nth-child(8){
+			color: green;cursor: pointer;
+		}
+		.d-none{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+<div class="main">
+	<h2 align="center">Add User</h2>
+	<input type="text" name="name"><br>
+	<input type="date" name="dob"><br>
+	<input type="email" name="email"><br>
+    <input accept="image/*" type="file" name="file" /><br>
+    <input type="hidden" id="index">
+    <button id="submit" onclick="saveFrom()">Click</button>
+    <button id="update" onclick="updateFrom()" class="d-none">Update</button>
+</div>
+<br>
+<div id="table" class="d-none">
+	<table border="1" cellpadding="0" cellspacing="0" align="center">
+	<thead>
+		<tr>
+			<th>Id</th>
+			<th>Name</th>
+			<th>Dob</th>
+			<th>Email</th>
+			<th>File</th>
+			<th>Date</th>
+			<th>Edit</th>
+			<th>Delete</th>
+		</tr>
+	</thead>
+	<tbody id="tbody"></tbody>
+</table>
+</div>
+<script>
+let data = [];
+function saveFrom() {
+	if (document.getElementsByName('name')[0].value !="" && document.getElementsByName('dob')[0].value != "" && document.getElementsByName('email')[0].value != "" && document.getElementsByName('file')[0].value != "") {
+		let name = document.getElementsByName('name')[0].value;
+		let dob = document.getElementsByName('dob')[0].value;
+		let email = document.getElementsByName('email')[0].value;
+		let file = document.getElementsByName('file')[0].files[0];
+		let formData = {
+			name : name,
+			dob : dob,
+			email : email,
+			file : URL.createObjectURL(file),
+			date : new Date().toLocaleDateString()
+		}
+		data.push(formData);
+		let html = ``;
+		data.forEach( function(element, index) {
+			html += `<tr>
+				<th>${index+1}</th>
+				<th>${element.name}</th>
+				<th>${element.dob}</th>
+				<th>${element.email}</th>
+				<th><img src="${element.file}" height="100px" width="100px"></th>
+				<th>${element.date}</th>
+				<th onclick="editData(${index},this)">Edit</th>
+				<th onclick="deleteData(${index},this)">Delete</th>`;
+		});
+		document.getElementById('tbody').innerHTML = html;
+		document.getElementById('table').classList.remove('d-none');
+		document.getElementsByName('name')[0].value = "";
+		document.getElementsByName('dob')[0].value = "";
+		document.getElementsByName('email')[0].value = "";
+		document.getElementsByName('file')[0].value = "";
+	}else{
+		alert('All field are required');
+	}
+}
+function deleteData(index,arg){
+	data.splice(index,1);
+	arg.parentElement.remove();
+}
+function editData(index,arg){
+	document.getElementById('submit').classList.add('d-none');
+	document.getElementById('update').classList.remove('d-none');
+	document.getElementsByTagName('h2')[0].innerText = 'Update User';
+	document.getElementsByName('name')[0].value = data[index].name;
+	document.getElementsByName('dob')[0].value = data[index].dob;
+	document.getElementsByName('email')[0].value = data[index].email;
+	document.getElementById('index').value = index;
+	arg.parentElement.classList.add('active');
+}
+function updateFrom(){
+	if (document.getElementsByName('name')[0].value !="" && document.getElementsByName('dob')[0].value != "" && document.getElementsByName('email')[0].value != "") {
+		let index = document.getElementById('index').value;
+		data[index]['name'] = document.getElementsByName('name')[0].value;
+		data[index]['dob'] = document.getElementsByName('dob')[0].value;
+		data[index]['email'] = document.getElementsByName('email')[0].value;
+		if (document.getElementsByName('file')[0].value != "") {
+			data[index]['file'] = URL.createObjectURL(document.getElementsByName('file')[0].files[0]);
+			document.getElementsByClassName('active')[0].children[4].children[0].setAttribute('src', URL.createObjectURL(document.getElementsByName('file')[0].files[0]));
+		}
+		document.getElementsByClassName('active')[0].children[1].innerText = document.getElementsByName('name')[0].value;
+		document.getElementsByClassName('active')[0].children[2].innerText = document.getElementsByName('dob')[0].value;
+		document.getElementsByClassName('active')[0].children[3].innerText = document.getElementsByName('email')[0].value;
+		document.getElementsByName('name')[0].value = "";
+		document.getElementsByName('dob')[0].value = "";
+		document.getElementsByName('email')[0].value = "";
+		document.getElementsByName('file')[0].value = "";
+		document.getElementById('submit').classList.remove('d-none');
+		document.getElementById('update').classList.add('d-none');
+		document.getElementsByTagName('h2')[0].innerText = 'Add User';
+		document.getElementById('index').value = "";
+		document.getElementsByClassName('active')[0].classList.remove('active');
+	}
+}
+</script>
+</body>
+</html>
